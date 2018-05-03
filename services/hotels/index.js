@@ -1,4 +1,4 @@
-const search = require("./search-model");
+const search = require("./search-service");
 module.exports = {
-    searchModel: search
+    searchService: search
 };

@@ -4,7 +4,7 @@ const hotelRouter = require("./hotel-router");
 
 const Router = function (app, express) {
     app.get("/", function (req, res, next) {
-        http.success(res, config);
+        proHttp.success(res, config);
     });
     hotelRouter(app, express);
 }

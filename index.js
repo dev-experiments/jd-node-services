@@ -5,15 +5,20 @@ var debug = require("./utility/debug.js");
 const path = require('path');
 
 var config = require("./server-config");
+var corsSetup = require("./mwares/corsSetup");
 
 
 const port = process.env.PORT;
 
 
 var app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-//app.use(bodyParser.json());
-//app.use(bodyParser.urlencoded({ extended: true }));
+
+if (process.env.NODE_ENV == 'development') {
+  app.use(corsSetup);
+}
 //app.use(express.static(path.join(__dirname,config.module_default.modules_path)));
 //console.log('==> ',config.mod.service.getModuleConfigDir('hotels'));
 
