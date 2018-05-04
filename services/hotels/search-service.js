@@ -39,7 +39,7 @@ const popularCities = function (req, res, next) {
             link: '',
         },
         {
-            text: 'mumbai',
+            text: 'Lucknow',
             sub_text: 'India',
             link: '',
         }]
