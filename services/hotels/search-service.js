@@ -1,5 +1,6 @@
 const proHttp = require("./../../utility/proHttp");
 const WebService = require("./../global/WebServices");
+const constants = require("./constants");
 
 const searchQuery = function (req, res, next) {
     let data = {};
@@ -31,24 +32,12 @@ const searchQuery = function (req, res, next) {
 
 const popularCities = function (req, res, next) {
     const context = 'HTTP-FETCH-RSVN';
-    const data =[{
-        title: 'Popular Cities',
-        items: [{
-            text: 'Bangalore',
-            sub_text: 'Indiiiaa',
-            link: '',
-        },
-        {
-            text: 'Lucknow',
-            sub_text: 'India',
-            link: '',
-        }]
-    }];
+    const data = constants.city_list;
     const output = proHttp.successResponse()
-                .setData(data)
-                .setMessage('Result received')
-                .setContext(context).output();
-            
+        .setData(data)
+        .setMessage('Result received')
+        .setContext(context).output();
+
     proHttp.success(res, output);
 
 }
