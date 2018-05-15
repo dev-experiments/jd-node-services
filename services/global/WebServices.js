@@ -1,7 +1,6 @@
 const apiSource = require('./../../server-config/api-source');
 class WebServices {
     constructor(source) {
-        console.log('WebServices class constructor');
         this.host = source.host;
     }
     
